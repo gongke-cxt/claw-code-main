@@ -1,0 +1,17 @@
+flowchart TD
+    repo["claw-code-main repository"] --> py["src/ Python workspace"]
+    repo --> rs["rust/ Rust workspace"]
+    repo --> cs["csharp/ C# mirror workspace"]
+    repo --> tests["tests/ Python validation"]
+    repo --> assets["assets/ docs images"]
+
+    py --> pycore["main.py / runtime / query / commands / tools"]
+    py --> ref["reference_data/*.json snapshots"]
+
+    rs --> rscrates["crates/api, runtime, claw-cli, server, tools, commands, plugins, lsp, compat-harness"]
+    cs --> csapp["ClawCode CLI"]
+    cs --> cstest["ClawCode.Tests"]
+
+    tests --> py
+    csapp --> ref
+    cstest --> csapp

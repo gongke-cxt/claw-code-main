@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720">
+  <defs>
+    <style>
+      .title { font: 700 28px 'Segoe UI', sans-serif; fill: #10233f; }
+      .label { font: 600 18px 'Segoe UI', sans-serif; fill: #10233f; }
+      .small { font: 400 15px 'Segoe UI', sans-serif; fill: #24415f; }
+      .box { fill: #f6fbff; stroke: #2b6cb0; stroke-width: 2; rx: 16; ry: 16; }
+      .accent { fill: #eef6ff; stroke: #1f4f82; stroke-width: 2; rx: 16; ry: 16; }
+      .arrow { stroke: #335d8c; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#335d8c" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="720" fill="#ffffff" />
+  <text x="40" y="52" class="title">claw-code-main Architecture</text>
+
+  <rect x="410" y="90" width="360" height="80" class="accent" />
+  <text x="590" y="124" text-anchor="middle" class="label">Repository Root</text>
+  <text x="590" y="150" text-anchor="middle" class="small">README.md, CLAW.md, PARITY.md, .github/</text>
+
+  <rect x="70" y="250" width="260" height="110" class="box" />
+  <text x="200" y="288" text-anchor="middle" class="label">src/ Python workspace</text>
+  <text x="200" y="316" text-anchor="middle" class="small">main.py / runtime / query</text>
+  <text x="200" y="340" text-anchor="middle" class="small">commands / tools / session / setup</text>
+
+  <rect x="70" y="430" width="260" height="90" class="box" />
+  <text x="200" y="466" text-anchor="middle" class="label">reference_data snapshots</text>
+  <text x="200" y="494" text-anchor="middle" class="small">commands, tools, parity, subsystems</text>
+
+  <rect x="460" y="250" width="260" height="110" class="box" />
+  <text x="590" y="288" text-anchor="middle" class="label">rust/ workspace</text>
+  <text x="590" y="316" text-anchor="middle" class="small">api, runtime, claw-cli, server</text>
+  <text x="590" y="340" text-anchor="middle" class="small">tools, commands, plugins, lsp</text>
+
+  <rect x="850" y="250" width="260" height="110" class="box" />
+  <text x="980" y="288" text-anchor="middle" class="label">csharp/ mirror workspace</text>
+  <text x="980" y="316" text-anchor="middle" class="small">ClawCode CLI</text>
+  <text x="980" y="340" text-anchor="middle" class="small">ClawCode.Tests</text>
+
+  <rect x="460" y="430" width="260" height="90" class="box" />
+  <text x="590" y="466" text-anchor="middle" class="label">tests/</text>
+  <text x="590" y="494" text-anchor="middle" class="small">Python validation and port checks</text>
+
+  <rect x="850" y="430" width="260" height="90" class="box" />
+  <text x="980" y="466" text-anchor="middle" class="label">assets/</text>
+  <text x="980" y="494" text-anchor="middle" class="small">Documentation images and media</text>
+
+  <path d="M 590 170 L 200 250" class="arrow" />
+  <path d="M 590 170 L 590 250" class="arrow" />
+  <path d="M 590 170 L 980 250" class="arrow" />
+  <path d="M 590 170 L 590 430" class="arrow" />
+  <path d="M 590 170 L 980 430" class="arrow" />
+  <path d="M 200 360 L 200 430" class="arrow" />
+  <path d="M 330 475 L 850 305" class="arrow" />
+  <path d="M 720 475 L 330 305" class="arrow" />
+
+  <text x="575" y="385" text-anchor="middle" class="small">tests exercise Python workspace</text>
+  <text x="585" y="284" text-anchor="middle" class="small">systems-language port</text>
+  <text x="790" y="350" text-anchor="middle" class="small">C# CLI reads shared snapshots</text>
+</svg>

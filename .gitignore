@@ -1,0 +1,16 @@
+__pycache__/
+archive/
+.omx/
+.clawd-agents/
+# Claude Code local artifacts
+.claude/settings.local.json
+.claude/sessions/
+.qoder/
+.dotnet-home/
+.dotnet-home-tests/
+.port_sessions/
+csharp/.slnprobe/
+csharp/.slnprobe2/
+csharp/ClawCode.generated.sln
+**/bin/
+**/obj/
