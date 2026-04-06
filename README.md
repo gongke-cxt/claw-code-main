@@ -1,6 +1,10 @@
 # Rewriting Project Claw Code
 
 <p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
   <strong>⭐ The fastest repo in history to surpass 50K stars, reaching the milestone in just 2 hours after publication ⭐</strong>
 </p>
 
@@ -54,6 +58,24 @@ cd rust
 cargo build --release
 ```
 
+## C# Port
+
+The C# workspace under `csharp/` mirrors the current Python porting workspace boundaries and focuses on the same inspection and runtime-simulation surface.
+
+It currently includes:
+
+- `ClawCode/` — CLI workspace for `summary`, `manifest`, `commands`, `tools`, `route`, `bootstrap`, and `parity-audit`
+- `ClawCode.Tests/` — zero-dependency automated tests for manifest, snapshots, routing, sessions, parity audit, and CLI smoke coverage
+- `README.zh-CN.md` and `docs/` — Chinese operation notes for build, usage, testing, and troubleshooting
+
+Run the C# build:
+
+```powershell
+dotnet build csharp\ClawCode.sln /m:1 /p:BuildInParallel=false
+dotnet run --project csharp\ClawCode -- summary
+dotnet run --project csharp\ClawCode.Tests
+```
+
 ## Backstory
 
 At 4 AM on March 31, 2026, I woke up to my phone blowing up with notifications. The Claw Code source had been exposed, and the entire dev community was in a frenzy. My girlfriend in Korea was genuinely worried I might face legal action from the original authors just for having the code on my machine — so I did what any engineer would do under pressure: I sat down, ported the core features to Python from scratch, and pushed it before the sun came up.
@@ -91,6 +113,8 @@ I've been deeply interested in **harness engineering** — studying how agent sy
 The main source tree is now Python-first.
 
 - `src/` contains the active Python porting workspace
+- `csharp/` contains the C# mirror workspace and tests
+- `rust/` contains the Rust systems-language port
 - `tests/` verifies the current Python workspace
 - the exposed snapshot is no longer part of the tracked repository state
 
@@ -106,6 +130,11 @@ This repository now focuses on Python porting work instead.
 
 ```text
 .
+├── csharp/                             # C# mirror workspace
+│   ├── ClawCode/                       # C# CLI port
+│   ├── ClawCode.Tests/                 # Zero-dependency C# tests
+│   ├── docs/                           # Chinese operation docs
+│   └── README.zh-CN.md
 ├── src/                                # Python porting workspace
 │   ├── __init__.py
 │   ├── commands.py
@@ -165,6 +194,13 @@ Run verification:
 
 ```bash
 python3 -m unittest discover -s tests -v
+```
+
+Run the C# mirror checks:
+
+```powershell
+dotnet build csharp\ClawCode.sln /m:1 /p:BuildInParallel=false
+dotnet run --project csharp\ClawCode.Tests
 ```
 
 Run the parity audit against the local ignored archive (when present):
